@@ -24,7 +24,7 @@ const ComponentPage = () => {
       </div>
 
       {/* Main content */}
-      <div className='rounded-md min-h-screen p-10   max-w-6xl lg:mx-auto md:mx-10 mx-5 md:py-10'>
+      <div className='rounded-md md:min-h-screen md:p-10 max-w-6xl lg:mx-auto md:mx-10 mx-5 md:py-10'>
         <Outlet />
       </div>
     </div>

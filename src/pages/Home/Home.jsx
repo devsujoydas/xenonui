@@ -7,7 +7,7 @@ import LovedByCommunity from './LovedByCommunity'
 
 const Home = () => {
   return (
-    <div className=' min-h-screen  '>
+    <div className=' '>
       <Hero />
       <ExploreWorlds />
       <LovedByCommunity />

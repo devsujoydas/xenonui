@@ -6,26 +6,24 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from './layout/MainLayout.jsx'
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import Home from './pages/Home/Home.jsx'
-import ComponentPage from './pages/ComponentPage/ComponentPage.jsx'
 import Lenis from 'lenis'
-import CompoHome from './pages/ComponentPage/CompoHome/CompoHome.jsx'
-import CompoForm from './pages/ComponentPage/CompoHome/CompoPage/CompoForm.jsx'
-import CompoCard from './pages/ComponentPage/CompoHome/CompoPage/CompoCard.jsx'
-import CompoButton from './pages/ComponentPage/CompoHome/CompoPage/CompoButton.jsx'
-import CompoAccordion from './pages/ComponentPage/CompoHome/CompoPage/CompoAccordion.jsx'
 import AuthProvider from './context/AuthProvider.jsx'
-import CompoCarousel from './pages/ComponentPage/CompoHome/CompoPage/CompoCarousel.jsx'
-
+import ComponentPage from './pages/ComponentPage/ComponentPage.jsx'
+import CompoHome from './pages/ComponentPage/CompoPage/CompoHome.jsx'
+import CompoAccordion from './pages/ComponentPage/CompoPage/CompoAccordion.jsx'
+import CompoCarousel from './pages/ComponentPage/CompoPage/CompoCarousel.jsx'
+import CompoForm from './pages/ComponentPage/CompoPage/CompoForm.jsx'
+import CompoCard from './pages/ComponentPage/CompoPage/CompoCard.jsx'
+import CompoButton from './pages/ComponentPage/CompoPage/CompoButton.jsx'
+import { Toaster } from 'react-hot-toast'
 
 
 // const lenis = new Lenis();
-
 // // Use requestAnimationFrame to continuously update the scroll
 // function raf(time) {
 //   lenis.raf(time);
 //   requestAnimationFrame(raf);
 // }
-
 // requestAnimationFrame(raf);
 
 const router = createBrowserRouter([
@@ -77,6 +75,8 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
+      <Toaster position="top-right" reverseOrder={false} />
+
       <RouterProvider router={router} />
     </AuthProvider>
   </StrictMode>,

@@ -64,24 +64,24 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-3">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.name}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `block text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 font-medium ${isActive ? 'text-blue-500 dark:text-blue-400' : ''
-                }`
-              }
-            >
-              {link.name}
-            </NavLink>
-          ))}
-        </div>
-      )}
+
+
+
+      <div className={`${isOpen ? "opacity-100 z-50 duration-500 transition-all" : " opacity-0 -z-50 duration-500 transition-all"} fixed top-0 left-0 bottom-0 right-0 border bg-black   flex justify-center items-center flex-col gap-5`}>
+        <X onClick={() => setIsOpen(false)} className='absolute top-5 right-5 cursor-pointer' />
+        {navLinks.map((link) => (
+          <NavLink
+            key={link.name}
+            to={link.path}
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) => `transition block text-2xl font-medium ${isActive ? 'text-[#DB3BF8]' : 'hover:text-zinc-300'}`}
+          >
+            {link.name}
+          </NavLink>
+        ))}
+      </div>
+
+
     </nav>
   )
 }

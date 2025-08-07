@@ -18,7 +18,7 @@ const CompoHome = () => {
 
 
 
-      <div className=' grid grid-cols-2 md:grid-cols-4 md:gap-5 gap-3 rounded-md mt-16 '>
+      <div className='md:text-[14px] text-sm grid grid-cols-2 md:grid-cols-4 md:gap-5 gap-3 rounded-md mt-8 md:mt-16 '>
         {compo.map((com, idx) => (
           <Link key={idx} to={com.path} className='hover:underline'>
             {com.name}
