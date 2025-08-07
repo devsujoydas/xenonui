@@ -8,6 +8,19 @@ import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import Home from './pages/Home/Home.jsx'
 import ComponentPage from './pages/ComponentPage/ComponentPage.jsx'
 import Forms from './pages/ComponentPage/Forms/Forms.jsx'
+import Lenis from 'lenis'
+
+
+
+const lenis = new Lenis();
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
 
 const router = createBrowserRouter([
   {
