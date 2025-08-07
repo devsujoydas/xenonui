@@ -3,7 +3,7 @@ import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 
-const DemoCompo = () => {
+const DemoContainer = () => {
   const [showCode, setShowCode] = useState(true)
   const codeString = ``
 
@@ -65,4 +65,4 @@ const DemoCompo = () => {
   )
 }
 
-export default DemoCompo
+export default DemoContainer

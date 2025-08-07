@@ -1,10 +1,10 @@
-import NavigationPath from '../../../components/NavigationPath/NavigationPath'
+import NavigationPath from '../../components/NavigationPath/NavigationPath'
 import { useRef, useState } from 'react'
 import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 
-const CompoButton = () => {
+const AccordionPage = () => {
   const [showCode, setShowCode] = useState(true)
   const npmRef = useRef(null);
   const codeRef = useRef(null);
@@ -28,9 +28,10 @@ const CompoButton = () => {
     }
   };
 
+
   return (
-    <div>
-      <NavigationPath title={"Button"} desc={"Displays a button or a component that looks like a button."} />
+    <div className='space-y-10'>
+      <NavigationPath title={"Accordion"} desc={"A vertically stacked set of interactive headings that each reveal a section of content."} />
 
       <div className='mt-5 md:mt-10'>
         <div className='my-5 flex gap-3 font-medium md:text-[14px] text-xs '>
@@ -66,9 +67,8 @@ const CompoButton = () => {
           </div>
         }
       </div>
-
     </div>
   )
 }
 
-export default CompoButton
+export default AccordionPage

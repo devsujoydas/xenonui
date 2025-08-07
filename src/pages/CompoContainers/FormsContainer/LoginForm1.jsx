@@ -1,20 +1,19 @@
 import { useRef, useState } from 'react'
 import { Copy } from 'lucide-react'
-import toast from 'react-hot-toast'
-import Login from '../../../../components/Login/Login'
+import toast from 'react-hot-toast' 
+import Login1 from '../../../components/Login/Login1'
 
 const LoginForm1 = () => {
     const [showCode, setShowCode] = useState(true)
     const npmRef = useRef(null);
     const codeRef = useRef(null);
 
-    const codeString = `
-import { Link } from "react-router-dom";
+    const codeString = `import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff, User } from "lucide-react";
 
-const Login = () => {
+const Login1 = () => {
     const [show, setShow] = useState(false);
     const [loadingSpinner, setLoadingSpinner] = useState(true);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -24,7 +23,7 @@ const Login = () => {
     };
 
     return (
-        <div className=" bg-white w-[450px] p-5 md:p-8 rounded-xl">
+        <div className=" bg-white w-[420px] p-5 md:p-8 rounded-xl">
             <div className="h-full flex justify-center items-center">
                 <div className=" w-full">
                     <div className="text-black">
@@ -45,7 +44,7 @@ const Login = () => {
                             <label className="text-slate-800 text-sm font-medium mb-1 block ">Password</label>
                             <input type={show ? "text" : "password"} placeholder="Enter password" {...register("password", { required: true })} className="text-slate-800 bg-white border border-slate-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500" />
                             <div onClick={() => setShow(!show)} className="text-xl absolute top-9 right-3 cursor-pointer active:scale-95 transition-all">
-                                {show ? <Eye className="text-black" /> : <EyeOff className="text-black" />}
+                                {show ? <Eye className="text-zinc-500 w-5" /> : <EyeOff className="text-zinc-500 w-5" />}
                             </div>
                             {errors.password && <p className="text-red-500 text-sm mt-1">Password is required</p>}
                         </div>
@@ -60,24 +59,27 @@ const Login = () => {
                             <p className={\`\${loadingSpinner ? "hidden" : "block"} border-t-2 border-b-2 rounded-full w-6 h-6 animate-spin\`} />
                             <p className={\`\${loadingSpinner ? "block" : "hidden"}\`}>Login</p>
                         </button>
-
-
-                    </form >
-                    <div className="flex text-zinc-600 py-2  justify-center items-center">
-                        <p> ------------ Or ------------ </p>
+                    </form>
+                    <div className="text-zinc-500 text-xs md:text-sm text-center font-inter flex items-center justify-center gap-0 my-5">
+                        <div class="w-2/3 border-t border-gray-300"></div>
+                         <p  className=" px-2">Or</p> 
+                        <div class="w-2/3 border-t border-gray-300"></div>
                     </div>
                     <button className="flex mb-2 justify-center items-center gap-1 border border-zinc-300 w-full py-1 rounded-md hover:bg-zinc-100 cursor-pointer active:scale-95 transition-all">
                         <img className="w-10 h-10 rounded-full" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="" />
                         <h1 className="text-black font-medium ">Sign in with Google</h1>
                     </button>
                     <p className="text-slate-800 text-sm text-center">Don't have an account? <Link to="" className="text-violet-600 font-semibold hover:underline ml-1">Signup</Link></p>
-                </div >
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     );
 };
 
-export default Login; `
+export default Login1;
+
+
+    `
 
     const handleCopyNpm = () => {
         const text = npmRef.current?.innerText;
@@ -100,7 +102,7 @@ export default Login; `
 
     return (
         <div className='mt-5 md:mt-10'>
-            <h1 className='font-inter font-semibold text-xl md:text-2xl'>1. Login Form</h1>
+            <h1 className='font-inter font-semibold text-xl md:text-2xl'>1. Login Form 1</h1>
             <div className='my-5 flex gap-3 font-medium md:text-[14px] text-xs '>
                 <button onClick={() => setShowCode(true)} className={`cursor-pointer  ${showCode ? "text-zinc-300" : "text-zinc-500"} `}>Preview</button>
                 <button onClick={() => setShowCode(false)} className={`cursor-pointer ${showCode ? "text-zinc-500" : "text-zinc-300"} `}>Code</button>
@@ -108,7 +110,7 @@ export default Login; `
             {showCode ?
                 <div className='border border-zinc-700 rounded-xl md:p-10 flex justify-center items-center'>
                     {/* Component  */}
-                    <Login />
+                    <Login1 />
                 </div>
                 :
                 <div className='h-[50vh] hide-scrollbar overflow-y-auto border  border-zinc-500 rounded-xl p-4 '>

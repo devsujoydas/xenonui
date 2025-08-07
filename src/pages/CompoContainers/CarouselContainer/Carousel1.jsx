@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef, useState } from 'react'
 import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
-import Slider from '../../../../components/Slider/Slider'
+import Slider from '../../../components/Slider/Slider'
 
 const Carousel1 = () => {
 

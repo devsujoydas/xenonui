@@ -1,10 +1,11 @@
-import NavigationPath from '../../../components/NavigationPath/NavigationPath'
+
 import { useRef, useState } from 'react'
 import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
+import NavigationPath from '../../components/NavigationPath/NavigationPath'
 
 
-const CompoAccordion = () => {
+const CardsPage = () => {
   const [showCode, setShowCode] = useState(true)
   const npmRef = useRef(null);
   const codeRef = useRef(null);
@@ -30,8 +31,8 @@ const CompoAccordion = () => {
 
 
   return (
-    <div className='space-y-10'>
-      <NavigationPath title={"Accordion"} desc={"A vertically stacked set of interactive headings that each reveal a section of content."} />
+    <div>
+      <NavigationPath title={"Card"} desc={"Displays a card with header, content, and footer."} />
 
       <div className='mt-5 md:mt-10'>
         <div className='my-5 flex gap-3 font-medium md:text-[14px] text-xs '>
@@ -71,4 +72,4 @@ const CompoAccordion = () => {
   )
 }
 
-export default CompoAccordion
+export default CardsPage

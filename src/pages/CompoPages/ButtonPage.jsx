@@ -1,10 +1,11 @@
-import NavigationPath from '../../../components/NavigationPath/NavigationPath'
+
 import { useRef, useState } from 'react'
 import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
+import NavigationPath from '../../components/NavigationPath/NavigationPath'
 
 
-const CompoCard = () => {
+const ButtonPage = () => {
   const [showCode, setShowCode] = useState(true)
   const npmRef = useRef(null);
   const codeRef = useRef(null);
@@ -28,10 +29,9 @@ const CompoCard = () => {
     }
   };
 
-
   return (
     <div>
-      <NavigationPath title={"Card"} desc={"Displays a card with header, content, and footer."} />
+      <NavigationPath title={"Button"} desc={"Displays a button or a component that looks like a button."} />
 
       <div className='mt-5 md:mt-10'>
         <div className='my-5 flex gap-3 font-medium md:text-[14px] text-xs '>
@@ -40,7 +40,7 @@ const CompoCard = () => {
         </div>
         {showCode ?
           <div className='border border-zinc-700 rounded-xl md:p-5'>
-           {/* Component  */}
+            {/* Component  */}
           </div>
           :
           <div className='h-[50vh] hide-scrollbar overflow-y-auto '>
@@ -49,7 +49,7 @@ const CompoCard = () => {
               <h1 className='text-zinc-300 md:text-3xl text-xl mb-2'>Installation</h1>
               <pre className="flex justify-between items-center bg-gray-900 text-zinc-300 text-sm p-4 rounded-md overflow-x-auto">
                 <code ref={npmRef} className='md:text-[14px] text-xs'>
-                  npm i 
+                  npm i
                 </code>
                 <button>
                   <Copy onClick={() => handleCopyNpm()} className='w-4 cursor-pointer text-zinc-500 hover:text-white active:text-zinc-500 active:scale-95 transition-all duration-300' />
@@ -67,8 +67,9 @@ const CompoCard = () => {
           </div>
         }
       </div>
+
     </div>
   )
 }
 
-export default CompoCard
+export default ButtonPage

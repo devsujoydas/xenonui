@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
-import Signup from '../../../../components/Signup/Signup'
+import Signup from '../../../components/Signup/Signup'
 
 const SignupForm1 = () => {
     const [showCode, setShowCode] = useState(true)
@@ -23,7 +23,7 @@ const Signup = () => {
     };
 
     return (
-        <div className=" bg-white w-[450px] p-5 md:p-8 rounded-xl">
+        <div className=" bg-white w-[420px] p-5 md:p-8 rounded-xl">
             <div className="h-full flex justify-center items-center">
                 <div className=" w-full">
                     <div className="text-black">
@@ -49,7 +49,7 @@ const Signup = () => {
                             <label className="text-slate-800 text-sm font-medium mb-1 block ">Password</label>
                             <input type={show ? "text" : "password"} placeholder="Enter password" {...register("password", { required: true })} className="text-slate-800 bg-white border border-slate-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500" />
                             <div onClick={() => setShow(!show)} className="text-xl absolute top-9 right-3 cursor-pointer active:scale-95 transition-all">
-                                {show ? <Eye className="text-black" /> : <EyeOff className="text-black" />}
+                                {show ? <Eye className="text-zinc-500 w-5" /> : <EyeOff className="text-zinc-500 w-5" />}
                             </div>
                             {errors.password && <p className="text-red-500 text-sm mt-1">Password is required</p>}
                         </div>
@@ -59,13 +59,15 @@ const Signup = () => {
                                 <label htmlFor="remember-me" className="text-black  ml-3 text-sm cursor-pointer">Remember me</label>
                             </div>
                         </div>
-                        <button type = "submit" className = { \`text-white font-medium \${loadingSpinner ? "bg-blue-700" : "bg-blue-500"} hover:bg-blue-500 w-full py-3 rounded-md cursor-pointer active:scale-95 transition-all flex justify-center items-center gap-5\`}>
+                       <button type = "submit" className = { \`text-white font-medium \${loadingSpinner ? "bg-blue-700" : "bg-blue-500"} hover:bg-blue-500 w-full py-3 rounded-md cursor-pointer active:scale-95 transition-all flex justify-center items-center gap-5\`}>
                             <p className={\`\${loadingSpinner ? "hidden" : "block"} border-t-2 border-b-2 rounded-full w-6 h-6 animate-spin\`} />
-                            <p className={\`\${loadingSpinner ? "block" : "hidden"}\`}>Signup</p>
+                            <p className={\`\${loadingSpinner ? "block" : "hidden"}\`}>Login</p>
                         </button>
                     </form>
-                     <div className="flex text-zinc-600 py-2  justify-center items-center">
-                        <p> ------------ Or ------------ </p>
+                    <div className="text-zinc-500 text-xs md:text-sm text-center font-inter flex items-center justify-center gap-0 my-5">
+                        <div class="w-2/3 border-t border-gray-300"></div>
+                        <p className=" px-2">Or</p>
+                        <div class="w-2/3 border-t border-gray-300"></div>
                     </div>
                     <button className="flex my-2 justify-center items-center gap-1 border border-zinc-300 w-full py-1 rounded-md hover:bg-zinc-100 cursor-pointer active:scale-95 transition-all">
                         <img className="w-10 h-10 rounded-full" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="" />
@@ -79,6 +81,7 @@ const Signup = () => {
 };
 
 export default Signup;
+
 `
 
     const handleCopyNpm = () => {

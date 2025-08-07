@@ -1,11 +1,10 @@
+import NavigationPath from '../../components/NavigationPath/NavigationPath'
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import AuthContext from "../../../context/AuthContext"
-import NavigationPath from "../../../components/NavigationPath/NavigationPath"
-import { desc } from "framer-motion/client"
+import AuthContext from "../../context/AuthContext"
 
 
-const CompoHome = () => {
+const CompoHomePage = () => {
   const { compo } = useContext(AuthContext)
 
   return (
@@ -29,4 +28,4 @@ const CompoHome = () => {
   )
 }
 
-export default CompoHome
+export default CompoHomePage

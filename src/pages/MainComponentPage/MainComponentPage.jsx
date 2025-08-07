@@ -1,10 +1,10 @@
 
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom' 
+import { NavLink, Outlet } from 'react-router-dom'
 import CompoSideNav from '../../shared/Header/CompoSideNav'
 
-const ComponentPage = () => {
+const MainComponentPage = () => {
 
 
   const [showCompoNav, setShowCompoNav] = useState(false)
@@ -31,4 +31,4 @@ const ComponentPage = () => {
   )
 }
 
-export default ComponentPage
+export default MainComponentPage

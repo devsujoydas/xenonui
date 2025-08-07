@@ -1,21 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import './index.css' 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from './layout/MainLayout.jsx'
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import Home from './pages/Home/Home.jsx'
 import Lenis from 'lenis'
 import AuthProvider from './context/AuthProvider.jsx'
-import ComponentPage from './pages/ComponentPage/ComponentPage.jsx'
-import CompoHome from './pages/ComponentPage/CompoPage/CompoHome.jsx'
-import CompoAccordion from './pages/ComponentPage/CompoPage/CompoAccordion.jsx'
-import CompoCarousel from './pages/ComponentPage/CompoPage/CompoCarousel.jsx'
-import CompoForm from './pages/ComponentPage/CompoPage/CompoForm.jsx'
-import CompoCard from './pages/ComponentPage/CompoPage/CompoCard.jsx'
-import CompoButton from './pages/ComponentPage/CompoPage/CompoButton.jsx'
-import { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast' 
+import CompoHomePage from './pages/CompoPages/CompoHomePage.jsx'
+import AccordionPage from './pages/CompoPages/AccordionPage.jsx'
+import CarouselPage from './pages/CompoPages/CarouselPage.jsx'
+import FormsPage from './pages/CompoPages/FormsPage.jsx'
+import CardsPage from './pages/CompoPages/CardsPage.jsx'
+import ButtonPage from './pages/CompoPages/ButtonPage.jsx'
+import MainComponentPage from './pages/MainComponentPage/MainComponentPage.jsx'
 
 
 // const lenis = new Lenis();
@@ -38,31 +37,31 @@ const router = createBrowserRouter([
       },
       {
         path: "/components",
-        element: <ComponentPage />,
+        element: <MainComponentPage />,
         children: [
           {
             path: "/components",
-            element: <CompoHome />,
+            element: <CompoHomePage />,
           },
           {
             path: "/components/accordion",
-            element: <CompoAccordion />,
+            element: <AccordionPage />,
           },
           {
             path: "/components/carousel",
-            element: <CompoCarousel />,
+            element: <CarouselPage />,
           },
           {
             path: "/components/form",
-            element: <CompoForm />,
+            element: <FormsPage />,
           },
           {
             path: "/components/card",
-            element: <CompoCard />,
+            element: <CardsPage />,
           },
           {
             path: "/components/button",
-            element: <CompoButton />,
+            element: <ButtonPage />,
           },
         ]
       },
