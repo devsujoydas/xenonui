@@ -1,12 +1,18 @@
+import React, { useState } from 'react'
+import NavigationPath from '../../../../components/NavigationPath/NavigationPath'
+import Slider from '../../../../components/Slider/Slider'
+
+const CompoCarousel = () => {
+    const [showCode, setShowCode] = useState(true)
+
+    const codeString = `
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination'
 import { motion } from "framer-motion";
 import { Autoplay } from 'swiper/modules';
 
-
 const Slider = () => {
-
     const imgData = [
         {
             "imgUrl": "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg",
@@ -34,7 +40,6 @@ const Slider = () => {
         }
     ]
 
-
     return (
         <div className=' cursor-grab active:cursor-grabbing  flex overflow-x-auto gap-5 '>
             <Swiper
@@ -52,7 +57,7 @@ const Slider = () => {
                     1440: { slidesPerView: 4, spaceBetween: 20 },
                 }}
 
-                className="lg:h-96 h-100 rounded-xl "
+                className="lg:h-96 h-100 "
             >
                 {
                     imgData.map((data, idx) => (
@@ -72,12 +77,46 @@ const Slider = () => {
 
                     ))
                 }
-
-
-
             </Swiper>
         </div>
     )
 }
 
-export default Slider
+export default Slider`;
+
+    return (
+        <div className='space-y-10'>
+            <NavigationPath title={"Carousel"} desc={"A carousel with motion and swipe built using Embla."} />
+
+            <div>
+                <div className='my-5 flex gap-3 font-medium '>
+                    <button onClick={() => setShowCode(true)} className={`cursor-pointer  ${showCode ? "text-zinc-300" : "text-zinc-500"}`}>Preview</button>
+                    <button onClick={() => setShowCode(false)} className={`cursor-pointer ${showCode ? "text-zinc-500" : "text-zinc-300"} `}>Code</button>
+                </div>
+                {showCode ?
+                    <div className='border border-zinc-700 rounded-xl p-5'>
+                        <Slider />
+                    </div>
+                    :
+                    <div className='h-[50vh] hide-scrollbar overflow-y-auto'>
+                        <div className='rounded-xl p-5'>
+                            <h1 className='text-zinc-300 text-3xl mb-2'>Installation</h1>
+                            <pre className="bg-gray-900 text-zinc-300 text-sm p-4 rounded-md overflow-x-auto">
+                                <code>
+                                    npm i swiper motion
+                                </code>
+                            </pre>
+
+                            <h1 className='text-zinc-300 text-3xl mt-5 mb-2'>Code</h1>
+                            <pre className="bg-gray-900 text-zinc-300 text-sm p-4 rounded-md overflow-x-auto">
+                                <code>{codeString}</code>
+                            </pre>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    )
+}
+
+export default CompoCarousel

@@ -63,18 +63,18 @@ const LovedByCommunity = () => {
 
 
     return (
-        <div className='min-h-[70vh] max-w-7xl 2xl:mx-auto md:mx-10 mx-3 '>
+        <div className='min-h-[70vh] max-w-7xl 2xl:mx-auto md:mx-10 mx-3 md:my-5 my-14 '>
             <div className='text-center'>
-                <h1 className='text-5xl font-semibold '>Loved By Community</h1>
-                <p className='text-zinc-400 mt-4'>What People Are Saying.</p>
+                <h1 className='md:text-5xl text-3xl font-semibold '>Loved By Community</h1>
+                <p className='text-zinc-400 md:mt-4 mt-2'>What People Are Saying.</p>
             </div>
 
-            <div className='mt-10 grid grid-cols-4 gap-5'>
+            <div className='mt-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
 
                 {
                     reviews.map((review, idx) => (
-                        <div className='bg-zinc-900 p-4 rounded-xl shadow-md  hover:shadow-zinc-700 transition-all'>
-                            <div className='flex items-center gap-2'>
+                        <div className=' border border-zinc-700 bg-zinc-900 p-5 rounded-xl shadow-md  hover:shadow-zinc-700 transition-all'>
+                            <div className='flex items-center gap-3'>
                                 <div>
                                     <img className='h-12 w-12 rounded-full ' src={review.img} alt="" />
                                 </div>
