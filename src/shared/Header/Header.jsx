@@ -19,7 +19,7 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <NavLink className="text-3xl font-light " to="/">Xenon UI</NavLink>
           <p className=' lg:block hidden px-2 py-1 text-xs text-zinc-300 bg-zinc-800 rounded-full font-inter'>v1.0.1</p>
-          <p className=' lg:block hidden px-2 py-1 text-xs text-zinc-100 font-semibold bg-zinc-800 rounded-full font-inter'>
+          <p className=' lg:block border border-purple-600 hidden px-2 py-1 text-xs text-zinc-100 font-semibold bg-zinc-800 rounded-full font-inter'>
             XenonUI v1.0.1 🔥</p>
         </div>
 

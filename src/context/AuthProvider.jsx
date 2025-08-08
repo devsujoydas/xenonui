@@ -7,6 +7,7 @@ const AuthProvider = ({ children }) => {
     { "name": "Card", "path": "/components/card" },
     { "name": "Form", "path": "/components/form" },
     { "name": "Carousel", "path": "/components/carousel" },
+    { "name": "Hero", "path": "/components/hero" },
     { "name": "Button", "path": "/components/button" },
     { "name": "Checkbox", "path": "/components/checkbox" },
     { "name": "Combobox", "path": "/components/combobox" },

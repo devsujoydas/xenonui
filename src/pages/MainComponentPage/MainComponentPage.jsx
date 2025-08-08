@@ -1,5 +1,5 @@
 
-import { Menu } from 'lucide-react'
+import { ArrowRightCircle } from 'lucide-react'
 import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import CompoSideNav from '../../shared/Header/CompoSideNav'
@@ -14,13 +14,16 @@ const MainComponentPage = () => {
     <div className=' h-full '>
 
       <div className='relative'>
-        {showCompoNav ?
+
+        <div className='absolute left-30 top-10'>
           <CompoSideNav setShowCompoNav={setShowCompoNav} />
+        </div>
+        {/* {showCompoNav ?
           :
-          <button onClick={() => { setShowCompoNav(true) }} className='ml-2 mt-2 md:top-0 top-[30vh]  cursor-pointer flex z-10 justify-center items-center absolute  border rounded-full border-zinc-600 w-10 h-10 bg-zinc-800 '>
-            <Menu />
+          <button onClick={() => { setShowCompoNav(true) }} className='ml-2 mt-2 fixed top-[50vh] cursor-pointer flex z-10 justify-center items-center  border rounded-full border-zinc-600  bg-zinc-800 '>
+            <ArrowRightCircle className='w-10 h-10' />
           </button>
-        }
+        } */}
       </div>
 
       {/* Main content */}

@@ -7,7 +7,7 @@ import { X } from 'lucide-react'
 const CompoSideNav = ({ setShowCompoNav }) => {
     const { compo } = useContext(AuthContext)
     return (
-        <div className='absolute z-50 bg-black border border-zinc-900  mr-5 p-2 rounded-md w-60 h-[80vh] overflow-hidden'>
+        <div className='bg-black border border-zinc-900  ml-5 p-2 rounded-md w-60 h-[80vh] overflow-hidden'>
             <div className='flex items-center justify-between'>
                 <h1 className='font-semibold text-xl '>Components</h1>
                 <X className='cursor-pointer' onClick={() => setShowCompoNav(false)} />

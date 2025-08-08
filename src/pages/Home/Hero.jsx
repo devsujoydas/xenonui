@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
     return (
-        <div className="relative h-[60vh] md:h-[80vh] w-full bg-[#000000]">
+        <div className="relative h-[60vh] md:h-[90vh] w-full bg-[#000000]">
             <div className="absolute flex justify-center items-center bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#363636_1px,transparent_1px),linear-gradient(to_bottom,#363636_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_90%_50%_at_50%_45%,#000_70%,transparent_110%)]">
                 <div className='flex gap-5 font-inter md:mx-0 mx-3'>
                     <div className='text-center space-y-5'>

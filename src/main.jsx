@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css' 
+import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from './layout/MainLayout.jsx'
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import Home from './pages/Home/Home.jsx'
 import Lenis from 'lenis'
 import AuthProvider from './context/AuthProvider.jsx'
-import { Toaster } from 'react-hot-toast' 
+import { Toaster } from 'react-hot-toast'
 import CompoHomePage from './pages/CompoPages/CompoHomePage.jsx'
 import AccordionPage from './pages/CompoPages/AccordionPage.jsx'
 import CarouselPage from './pages/CompoPages/CarouselPage.jsx'
@@ -15,6 +15,7 @@ import FormsPage from './pages/CompoPages/FormsPage.jsx'
 import CardsPage from './pages/CompoPages/CardsPage.jsx'
 import ButtonPage from './pages/CompoPages/ButtonPage.jsx'
 import MainComponentPage from './pages/MainComponentPage/MainComponentPage.jsx'
+import HerosPage from './pages/CompoPages/HerosPage.jsx'
 
 
 // const lenis = new Lenis();
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
           {
             path: "/components/card",
             element: <CardsPage />,
+          },
+          {
+            path: "/components/hero",
+            element: <HerosPage />,
           },
           {
             path: "/components/button",
