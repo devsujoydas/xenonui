@@ -1,5 +1,4 @@
-import { ArrowRight } from 'lucide-react'
-import React from 'react'
+import { ArrowRight } from 'lucide-react' 
 import { Link } from 'react-router-dom'
 
 const Hero1 = () => {
@@ -12,7 +11,6 @@ const Hero1 = () => {
                         <h1 className='md:text-5xl text-2xl font-semibold'>Make <span className='bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent'>beautiful</span> <br className='lg:block hidden' />  websites regardless of  your <br className='lg:block hidden' /> design experience.</h1>
                         
                         <p className='text-zinc-400 md:text-sm text-xs'>Effortlessly copy and paste stunning, responsive components—no need to <br className='md:block hidden' /> worry about styling or animations. Build quickly and launch faster.</p>
-                       
                        
                         <div className='flex justify-center items-center'>
                             <Link to={""} className='flex items-center justify-center gap-1 border border-transparent hover:border-[#CC42F8] cursor-pointerfont-semibold md:px-4 px-2 md:py-2 py-1 rounded-md bg-[#CC42F8] hover:bg-black hover:text-[#CC42F8] active:scale-95 hover:rounded-full transition-all duration-300 md:text-sm text-xs'>Browse Components

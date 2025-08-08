@@ -1,0 +1,38 @@
+.btn1 {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  border: 1px solid #3f3f46;
+  background: transparent;
+  color: #e4e4e7;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn1:hover {
+  background: #27272a;
+  transform: translateY(-1px);
+}
+
+.btn1:active {
+  transform: translateY(0);
+}
+
+/* ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 600ms linear;
+  background-color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

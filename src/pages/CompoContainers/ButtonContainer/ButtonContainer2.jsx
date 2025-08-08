@@ -1,38 +1,12 @@
 import { useRef, useState } from 'react'
 import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
-import Hero1 from '../../../components/Hero/Hero1'
+import Button2 from '../../../components/Buttons/Button2'
 
 
-const HeroContainer1 = () => {
+const HeroContainer2 = () => {
     const [showCode, setShowCode] = useState(true)
-    const codeString = `import { ArrowRight } from 'lucide-react' 
-import { Link } from 'react-router-dom'
-
-const Hero1 = () => {
-    return (
-        <div className="relative h-[60vh] md:h-[50vh] w-full bg-[#000000]">
-            <div className="absolute flex justify-center items-center bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#363636_1px,transparent_1px),linear-gradient(to_bottom,#363636_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_90%_50%_at_50%_45%,#000_70%,transparent_110%)]">
-                <div className='flex gap-5 font-inter md:mx-0 mx-3'>
-                    <div className='text-center space-y-3 md:space-y-5'>
-                        
-                        <h1 className='md:text-5xl text-2xl font-semibold'>Make <span className='bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent'>beautiful</span> <br className='lg:block hidden' />  websites regardless of  your <br className='lg:block hidden' /> design experience.</h1>
-                        
-                        <p className='text-zinc-400 md:text-sm text-xs'>Effortlessly copy and paste stunning, responsive components—no need to <br className='md:block hidden' /> worry about styling or animations. Build quickly and launch faster.</p>
-                       
-                        <div className='flex justify-center items-center'>
-                            <Link to={""} className='flex items-center justify-center gap-1 border border-transparent hover:border-[#CC42F8] cursor-pointerfont-semibold md:px-4 px-2 md:py-2 py-1 rounded-md bg-[#CC42F8] hover:bg-black hover:text-[#CC42F8] active:scale-95 hover:rounded-full transition-all duration-300 md:text-sm text-xs'>Browse Components
-                                <ArrowRight className='w-5' /></Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    )
-}
-
-export default Hero1`
+    const codeString = ``
 
     const npmRef = useRef(null);
     const codeRef = useRef(null);
@@ -57,6 +31,7 @@ export default Hero1`
 
     return (
         <div className='mt-5 md:mt-10'>
+            <h1 className='font-inter font-semibold text-xl md:text-2xl'>2. Button 2</h1>
             <div className='my-5 flex gap-3 font-medium md:text-[14px] text-xs '>
                 <button onClick={() => setShowCode(true)} className={`cursor-pointer  ${showCode ? "text-zinc-300" : "text-zinc-500"}`}>Preview</button>
                 <button onClick={() => setShowCode(false)} className={`cursor-pointer ${showCode ? "text-zinc-500" : "text-zinc-300"} `}>Code</button>
@@ -64,7 +39,7 @@ export default Hero1`
             {showCode ?
                 <div className='border border-zinc-700 rounded-xl md:p-5'>
                     {/* Component */}
-                    <Hero1 />
+                    <Button2 />
                 </div>
                 :
                 <div className='h-[50vh] hide-scrollbar overflow-y-auto border  border-zinc-500 rounded-xl p-4 '>
@@ -73,7 +48,7 @@ export default Hero1`
                         <h1 className='text-zinc-300 md:text-3xl text-xl mb-2'>Installation</h1>
                         <pre className="flex justify-between items-center bg-gray-900 text-zinc-300 text-sm p-4 rounded-md overflow-x-auto">
                             <code ref={npmRef} className='md:text-[14px] text-xs'>
-                                npm i react-router-dom lucide-react
+                                npm i react
                             </code>
                             <button>
                                 <Copy onClick={() => handleCopyNpm()} className='w-4 cursor-pointer text-zinc-500 hover:text-white active:text-zinc-500 active:scale-95 transition-all duration-300' />
@@ -94,4 +69,4 @@ export default Hero1`
     )
 }
 
-export default HeroContainer1
+export default HeroContainer2

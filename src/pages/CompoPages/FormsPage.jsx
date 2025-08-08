@@ -9,8 +9,8 @@ const FormsPage = () => {
     <div className=''>
       <NavigationPath title={"Form"} desc={"A section of the interface that contains interactive controls for submitting information."} />
       <LoginForm1 />
-      <SignupForm1 />
       <LoginForm2 />
+      <SignupForm1 />
     </div>
   )
 }

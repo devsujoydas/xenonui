@@ -6,8 +6,18 @@ import toast from "react-hot-toast";
 
 const Card2 = ({ product }) => {
     const [showImg, setShowImg] = useState(true);
-    const [isWishlisted, setIsWishlisted] = useState(false);
+    const [isWishlisted, setIsWishlisted] = useState(true);
+
     const addToCart = () => { toast.success("Add to cart") }
+    const addToWishlist = () => {
+        setIsWishlisted(true)
+        toast.success("Add to wishlist")
+    }
+    const removeFromWishlist = () => {
+        setIsWishlisted(false)
+        toast.success("Remove from wishlist")
+    }
+
 
 
     return (
@@ -23,7 +33,7 @@ const Card2 = ({ product }) => {
                             <img className="w-full  " src="https://nest-frontend-v6.vercel.app/assets/imgs/shop/product-1-1.jpg" alt="" />
                         </div>
                     </Link>
-                    
+
                     <div className={`absolute top-0 w-full h-full ${showImg ? "opacity-0 z-0 transition-all duration-500" : "opacity-100 z-10 transition-all duration-500"}`}>
                         <div
                             className="w-full h-full bg-cover bg-center bg-no-repeat relative"
@@ -33,9 +43,9 @@ const Card2 = ({ product }) => {
                                 className="absolute top-3 right-3 bg-white/90 hover:bg-white text-gray-600 border border-zinc-200 p-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40 cursor-pointer"
                             >
                                 {isWishlisted ? (
-                                    <Heart onClick={() => setIsWishlisted(!isWishlisted)} className="w-5 h-5 text-red-500" />
+                                    <HeartIcon onClick={() => removeFromWishlist()} className="w-5 h-5 text-red-500  " />
                                 ) : (
-                                    <HeartIcon onClick={() => setIsWishlisted(!isWishlisted)} className="w-5 h-5" />
+                                    <Heart onClick={() => addToWishlist()} className="w-5 h-5" />
                                 )}
                             </button>
                             <Link

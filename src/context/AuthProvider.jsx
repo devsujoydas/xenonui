@@ -3,12 +3,13 @@ import AuthContext from './AuthContext'
 
 const AuthProvider = ({ children }) => {
   const compo = [
-    { "name": "Accordion", "path": "/components/accordion" },
-    { "name": "Navbar", "path": "/components/navbar" },
     { "name": "Card", "path": "/components/card" },
     { "name": "Form", "path": "/components/form" },
-    { "name": "Carousel", "path": "/components/carousel" },
     { "name": "Hero", "path": "/components/hero" },
+    { "name": "Carousel", "path": "/components/carousel" },
+    { "name": "Navbar", "path": "/components/navbar" },
+    { "name": "Footer", "path": "/components/footer" },
+    { "name": "Accordion", "path": "/components/accordion" },
     { "name": "Button", "path": "/components/button" },
     { "name": "Checkbox", "path": "/components/checkbox" },
     { "name": "Combobox", "path": "/components/combobox" },

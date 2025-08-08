@@ -105,7 +105,7 @@ export default Signup;
 
     return (
         <div className='mt-5 md:mt-10'>
-            <h1 className='font-inter font-semibold text-xl md:text-2xl'>2. SignUp Form</h1>
+            <h1 className='font-inter font-semibold text-xl md:text-2xl'>3. SignUp Form 1</h1>
             <div className='my-5 flex gap-3 font-medium md:text-[14px] text-xs '>
                 <button onClick={() => setShowCode(true)} className={`cursor-pointer  ${showCode ? "text-zinc-300" : "text-zinc-500"}`}>Preview</button>
                 <button onClick={() => setShowCode(false)} className={`cursor-pointer ${showCode ? "text-zinc-500" : "text-zinc-300"} `}>Code</button>

@@ -1,8 +1,9 @@
 
 import { useRef, useState } from 'react'
-import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
 import NavigationPath from '../../components/NavigationPath/NavigationPath'
+import ButtonContainer1 from '../CompoContainers/ButtonContainer/ButtonContainer1'
+import ButtonContainer2 from '../CompoContainers/ButtonContainer/ButtonContainer2'
 
 
 const ButtonPage = () => {
@@ -33,6 +34,8 @@ const ButtonPage = () => {
     <div>
       <NavigationPath title={"Button"} desc={"Displays a button or a component that looks like a button."} />
 
+      <ButtonContainer1 />
+      <ButtonContainer2 />
 
     </div>
   )
