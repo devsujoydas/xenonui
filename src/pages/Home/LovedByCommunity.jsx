@@ -65,8 +65,8 @@ const LovedByCommunity = () => {
     return (
         <div className='min-h-[70vh] max-w-7xl 2xl:mx-auto md:mx-10 mx-3 md:my-5 my-14 '>
             <div className='text-center'>
-                <h1 className='md:text-5xl text-3xl font-semibold '>Loved By Community</h1>
-                <p className='text-zinc-400 md:mt-4 mt-2'>What People Are Saying.</p>
+                <h1 className='md:text-5xl text-3xl font-semibold '>What People Are Saying. </h1>
+                <p className='text-zinc-400 md:mt-4 mt-2'>Loved By Community</p>
             </div>
 
             <div className='mt-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>

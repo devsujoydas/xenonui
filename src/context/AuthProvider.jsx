@@ -4,6 +4,7 @@ import AuthContext from './AuthContext'
 const AuthProvider = ({ children }) => {
   const compo = [
     { "name": "Accordion", "path": "/components/accordion" },
+    { "name": "Navbar", "path": "/components/navbar" },
     { "name": "Card", "path": "/components/card" },
     { "name": "Form", "path": "/components/form" },
     { "name": "Carousel", "path": "/components/carousel" },

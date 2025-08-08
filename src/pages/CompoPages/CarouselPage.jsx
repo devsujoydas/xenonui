@@ -1,5 +1,5 @@
 import NavigationPath from '../../components/NavigationPath/NavigationPath' 
-import Carousel1 from '../CompoContainers/CarouselContainer/Carousel1'
+import CarouselContainer1 from '../CompoContainers/CarouselContainer/CarouselContainer1'
 
 
 const CarouselPage = () => {
@@ -9,7 +9,7 @@ const CarouselPage = () => {
         <div className=''>
             <NavigationPath title={"Carousel"} desc={"A carousel with motion and swipe built using Embla."} />
 
-            <Carousel1 />
+            <CarouselContainer1 />
         </div>
     )
 }

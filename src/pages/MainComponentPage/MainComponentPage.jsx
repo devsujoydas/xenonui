@@ -15,15 +15,16 @@ const MainComponentPage = () => {
 
       <div className='relative'>
 
-        <div className='absolute left-30 top-10'>
+        <div className={`absolute z-50 ${showCompoNav ? "md:left-30" : "-left-[100%] "} duration-500 transition-all   top-10 md:top-10`}>
           <CompoSideNav setShowCompoNav={setShowCompoNav} />
         </div>
-        {/* {showCompoNav ?
-          :
+        
+        {!showCompoNav &&
+
           <button onClick={() => { setShowCompoNav(true) }} className='ml-2 mt-2 fixed top-[50vh] cursor-pointer flex z-10 justify-center items-center  border rounded-full border-zinc-600  bg-zinc-800 '>
-            <ArrowRightCircle className='w-10 h-10' />
+            <ArrowRightCircle className='md:w-10 w-8 md:h-10 h-8' />
           </button>
-        } */}
+        }
       </div>
 
       {/* Main content */}

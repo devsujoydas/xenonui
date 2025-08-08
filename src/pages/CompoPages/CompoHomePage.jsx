@@ -9,11 +9,7 @@ const CompoHomePage = () => {
 
   return (
     <div className=''>
-      <NavigationPath
-        title={"Components"}
-        desc={`Here you can find all the components available in the library.`}
-        desc1={"We are working on adding more components."}
-      />
+      <NavigationPath title={"Components"} desc={`Here you can find all the components available in the library.`} desc1={"We are working on adding more components."} />
 
 
 

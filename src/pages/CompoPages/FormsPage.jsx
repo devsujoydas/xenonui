@@ -3,8 +3,6 @@ import LoginForm1 from '../CompoContainers/FormsContainer/LoginForm1'
 import LoginForm2 from '../CompoContainers/FormsContainer/LoginForm2'
 import SignupForm1 from '../CompoContainers/FormsContainer/SignupForm1'
 
-
-
 const FormsPage = () => {
 
   return (

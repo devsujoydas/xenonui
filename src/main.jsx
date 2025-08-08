@@ -16,6 +16,7 @@ import CardsPage from './pages/CompoPages/CardsPage.jsx'
 import ButtonPage from './pages/CompoPages/ButtonPage.jsx'
 import MainComponentPage from './pages/MainComponentPage/MainComponentPage.jsx'
 import HerosPage from './pages/CompoPages/HerosPage.jsx'
+import NavbarPage from './pages/CompoPages/NavbarPage.jsx'
 
 
 // const lenis = new Lenis();
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
           {
             path: "/components/accordion",
             element: <AccordionPage />,
+          },
+          {
+            path: "/components/navbar",
+            element: <NavbarPage />,
           },
           {
             path: "/components/carousel",

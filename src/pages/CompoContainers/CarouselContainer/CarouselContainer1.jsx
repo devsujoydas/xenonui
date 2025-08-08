@@ -4,7 +4,7 @@ import { Copy } from 'lucide-react'
 import toast from 'react-hot-toast'
 import Slider from '../../../components/Slider/Slider'
 
-const Carousel1 = () => {
+const CarouselContainer1 = () => {
 
     const [showCode, setShowCode] = useState(true)
     const codeString = `import { Swiper, SwiperSlide } from 'swiper/react';
@@ -108,6 +108,7 @@ export default Slider`;
 
     return (
         <div className='mt-5 md:mt-10'>
+            <h1 className='font-inter font-semibold text-xl md:text-2xl'>1. Carousel 1</h1>
             <div className='my-5 flex gap-3 font-medium md:text-[14px] text-xs '>
                 <button onClick={() => setShowCode(true)} className={`cursor-pointer  ${showCode ? "text-zinc-300" : "text-zinc-500"}`}>Preview</button>
                 <button onClick={() => setShowCode(false)} className={`cursor-pointer ${showCode ? "text-zinc-500" : "text-zinc-300"} `}>Code</button>
@@ -144,4 +145,4 @@ export default Slider`;
     )
 }
 
-export default Carousel1
+export default CarouselContainer1

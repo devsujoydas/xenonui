@@ -15,7 +15,7 @@ const Hero = () => {
                        
                        
                         <div className='flex justify-center items-center'>
-                            <Link to={"/components"} className='flex items-center justify-center gap-1 border border-transparent hover:border-[#CC42F8] cursor-pointerfont-semibold md:px-4 px-2 md:py-3 py-1 rounded-md bg-[#CC42F8] hover:bg-black hover:text-[#CC42F8] active:scale-95 hover:rounded-full transition-all duration-300 md:text-sm text-xs'>Browse Components
+                            <Link to={"/components"} className='flex items-center justify-center gap-1 border border-transparent hover:border-[#CC42F8] cursor-pointerfont-semibold md:px-4 px-2 md:py-3 py-1 rounded-md bg-[#CC42F8] hover:bg-black hover:text-[#CC42F8] active:scale-95 hover:rounded-full transition-all duration-300 md:text-sm text-xs'>Create New Project
                                 <ArrowRight className='w-5' /></Link>
                         </div>
                     </div>

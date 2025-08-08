@@ -1,9 +1,20 @@
-import React, { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Github, Menu, Search, X } from 'lucide-react'
+import { Menu, Search, X } from 'lucide-react'
+import AuthContext from '../../context/AuthContext'
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
+
 
 const Header = () => {
+  const { compo } = useContext(AuthContext)
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenSearch, setIsOpenSearch] = useState(false)
+
+  const [searchText, setSearchText] = useState("");
+  const filteredData = compo.filter(item =>
+    item.name.toLowerCase().includes(searchText.toLowerCase())
+  );
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -25,31 +36,23 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <div className='hidden md:flex space-x-6 items-center'>
-
           <div className="flex space-x-6 items-center text-sm">
             {navLinks.map((link) => (
               <NavLink
-                key={link.name}
-                to={link.path}
+                key={link.name} to={link.path}
                 className={({ isActive }) => `transition font-medium ${isActive ? 'text-[#DB3BF8]' : 'hover:text-zinc-300'}`}
-              >
-                {link.name}
-              </NavLink>
+              > {link.name} </NavLink>
             ))}
           </div>
 
           <div className='flex items-center justify-center gap-2'>
-            <button className='flex items-center cursor-pointer justify-center border border-zinc-600 rounded-full p-2 text-zinc-500'>
+            <button onClick={() => setIsOpenSearch(true)} className='flex active:scale-95 transition-all duration-300 items-center cursor-pointer justify-center border border-zinc-600 rounded-full p-2 text-zinc-500'>
               <Search className='h-4 ' />
               <h1 className='text-sm pr-4'>Search</h1>
             </button>
             <Link to={"https://github.com/devsujoydas"} target='_blank' className='border border-zinc-600 rounded-full p-2'>
-              <svg height="24" viewBox="0 0 24 24" width="24"><path clipRule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z" fill="#aab" fillRule="evenodd"></path></svg>
+              <FaGithub className='text-xl' />
             </Link>
-          </div>
-
-          <div>
-
           </div>
         </div>
 
@@ -58,28 +61,78 @@ const Header = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-gray-700 dark:text-white focus:outline-none"
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          > {isOpen ? <X size={28} /> : <Menu size={28} />} </button>
         </div>
       </div>
 
 
 
-
+      {/* Nav for small */}
       <div className={`${isOpen ? "opacity-100 z-50 duration-500 transition-all" : " opacity-0 -z-50 duration-500 transition-all"} fixed top-0 left-0 bottom-0 right-0 border bg-black   flex justify-center items-center flex-col gap-5`}>
         <X onClick={() => setIsOpen(false)} className='absolute top-5 right-5 cursor-pointer' />
         {navLinks.map((link) => (
           <NavLink
-            key={link.name}
-            to={link.path}
+            key={link.name} to={link.path}
             onClick={() => setIsOpen(false)}
             className={({ isActive }) => `transition block text-2xl font-medium ${isActive ? 'text-[#DB3BF8]' : 'hover:text-zinc-300'}`}
-          >
-            {link.name}
-          </NavLink>
+          >{link.name}</NavLink>
         ))}
       </div>
+
+
+
+      {/* Search Modal */}
+      <AnimatePresence>
+        {isOpenSearch && (
+          <motion.div
+            key="overlay"
+            className="bg-[#000000c5] fixed top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} transition={{ duration: 0.3 }}
+            onClick={() => setIsOpenSearch(false)}
+          >
+            <motion.div
+              key="modal"
+              className="bg-black w-96 mx-5 md:mx-0 md:w-[600px] border border-zinc-700 rounded-xl p-5"
+              initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }} transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Search Box */}
+              <button className="flex w-full items-center cursor-pointer border border-zinc-600 rounded-full md:p-3 p-2 text-zinc-300">
+                <Search className="h-5 mr-1" />
+                <input
+                  onChange={(e) => setSearchText(e.target.value)}
+                  value={searchText} type="search" placeholder="Search"
+                  className="outline-none text-sm w-full bg-transparent"
+                />
+              </button>
+
+              {/* Search Results / No Results */}
+              <div className="text-center text-zinc-400 flex flex-col justify-center items-center mt-5 h-full">
+                {searchText ? (
+                  filteredData.length > 0 ? (
+                    <ul className="w-full text-left space-y-2 overflow-y-auto max-h-90 hide-scrollbar">
+                      {filteredData.map((item) => (
+                        <Link
+                          to={item.path} key={item.name} onClick={() => { setIsOpenSearch(false) }}
+                          className="bg-zinc-700 text-white border border-zinc-700 block rounded-md hover:bg-zinc-800 transition"
+                        > <li className="md:p-4 p-2 md:text-[14px] text-sm">{item.name}</li> </Link>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className="py-10">
+                      <h1>No results for "{searchText}"</h1>
+                      <p>Try adding more characters to your search term.</p>
+                    </div>
+                  ))
+                  :
+                  (<p className="h-40 flex items-center">Start typing to search...</p>)}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
 
     </nav>
